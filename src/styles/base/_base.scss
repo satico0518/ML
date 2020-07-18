@@ -1,14 +1,18 @@
 * {
-    font-family: monospace;
-    font-size: 1.2rem;
-    margin: 0;
+  font-family: 'Catamaran', sans-serif;
+  line-height: 25px;
+  color: $black;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0;
 }
 
-html, body {
-    height: 100vh;
-    width: 100vw;
+html,
+body {
+  height: 100vh;
+  width: 100vw;
 }
 
 main {
-    width: 100%;
+  width: 100%;
 }

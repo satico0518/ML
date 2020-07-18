@@ -1,0 +1,18 @@
+.custom-button {
+    background-color: $links;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px $black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    &:hover {
+        cursor: pointer;
+        background-color: lighten($color: $links, $amount: 5);
+    }
+}
+
+.block {
+    width: 100%;
+}

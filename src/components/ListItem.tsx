@@ -1,31 +1,53 @@
 import React, { FC } from 'react';
 import PropTypes from 'prop-types';
-import { Item } from '../types';
 import { Link } from 'react-router-dom';
+// types
+import { Item } from '../types';
+// helpers
+import { currencyFormat } from '../utils';
+// assets
+import shippingIcon from '../assets/images/ic_shipping.png';
 
-const ListItem: FC<Item> = ({ id, price, title, state_name, thumbnail }) => {
+const ListItem: FC<Item> = ({
+  id,
+  price,
+  title,
+  state_name,
+  picture,
+  free_shipping,
+}) => {
   return (
     <article>
-      <figure>
-        <Link to={`/items/${id}`}>
-          <img src={thumbnail} alt={title} />
-        </Link>
-      </figure>
-      <aside>
-        <div>
-          <h2>{price}</h2>
-          <p>{title}</p>
-        </div>
-        <div>{state_name}</div>
-      </aside>
+      <div className="list-item__wrapper">
+        <figure>
+          <Link to={`/items/${id}`}>
+            <img src={picture} alt={title} />
+          </Link>
+        </figure>
+        <aside>
+          <div className='list-item__column-1'>
+            <span className='list-item__price'>
+              {currencyFormat(price.amount)} 
+              {free_shipping && (
+                <img src={shippingIcon} alt="free shipping icon" />
+              )}
+            </span>
+            <p>{title}</p>
+          </div>
+          <div className='list-item__state-name'>{state_name}</div>
+        </aside>
+      </div>
     </article>
   );
 };
 
 ListItem.propTypes = {
-  price: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
+  price: PropTypes.any.isRequired,
   title: PropTypes.string.isRequired,
   state_name: PropTypes.string.isRequired,
+  picture: PropTypes.string.isRequired,
+  free_shipping: PropTypes.bool.isRequired,
 };
 
 export default ListItem;
