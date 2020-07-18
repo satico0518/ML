@@ -1,0 +1,11 @@
+@import 'base/settings';
+@import 'base/base';
+
+// components
+@import './search-bar.scss';
+@import './search-screen.scss';
+@import './search-results.scss';
+@import './search-input.scss';
+@import './result-list.scss';
+@import './breadcrumb.scss';
+@import './loader.scss';
