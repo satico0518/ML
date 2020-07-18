@@ -2,10 +2,14 @@
 @import 'base/base';
 
 // components
-@import './search-bar.scss';
-@import './search-screen.scss';
 @import './search-results.scss';
+@import './search-screen.scss';
 @import './search-input.scss';
 @import './result-list.scss';
+@import './search-bar.scss';
 @import './breadcrumb.scss';
+@import './list-item.scss';
+@import './product-detail.scss';
+@import './product.scss';
+@import './button.scss';
 @import './loader.scss';

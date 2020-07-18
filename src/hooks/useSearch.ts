@@ -1,25 +1,27 @@
 import { useState, useEffect } from 'react';
-
 // axios
 import axios from 'axios';
-
-const baseUrl = 'https://api.mercadolibre.com/sites/MLA/search?q=';
+// redux
+import { useDispatch } from 'react-redux';
+import { loadingAction, setErrorAction } from '../redux/actions/ui.actions';
+// config
+import { SEARCH_URL } from '../config';
 
 export default (query: string) => {
+  const dispatch = useDispatch();
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   const doRequest = async () => {
     try {
-      const result = await axios(`${baseUrl}${query}`);
+      dispatch(loadingAction(true));
+      const result = await axios(`${SEARCH_URL}/search?q=${query}`);
       if (result.status !== 200) throw new Error(result.statusText);
       setData(result.data.results.slice(0, 4));
-      setError(null);
+      dispatch(setErrorAction(null));
     } catch (error) {
-      setError(error);
+      dispatch(setErrorAction(error));
     } finally {
-      setLoading(false);
+      dispatch(loadingAction(false));
     }
   };
 
@@ -29,8 +31,6 @@ export default (query: string) => {
   }, [query]);
 
   return {
-    data,
-    loading,
-    error,
+    data
   };
 };

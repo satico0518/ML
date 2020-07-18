@@ -1,12 +1,12 @@
 .breadcrumb {
   display: flex;
-  padding: 0;
+  padding: 16px 0;
   li {
     list-style: none;
     margin-right: 10px;
     a {
       color: gray;
-      font-size: 1rem;
+      font-size: 14px;
       text-decoration: none;
       transition: text-decoration 0.3s ease;
       &:hover {

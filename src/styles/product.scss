@@ -1,0 +1,49 @@
+.product__ {
+  &wrapper {
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    section {
+      display: flex;
+      padding: 32px;
+      figure {
+        min-width: 680px;
+        display: flex;
+        justify-content: center;
+      }
+      aside {
+        flex: auto;
+        display: flex;
+        flex-direction: column;
+        & > span:first-child {
+          font-size: 14px;
+        }
+      }
+    }
+    footer {
+      margin-top: 50px;
+      padding: 32px;
+    }
+  }
+  &description-title {
+    font-size: 28px;
+    color: $black;
+  }
+  &description-text {
+    font-size: 16px;
+    color: $dark-grey;
+    margin-top: 32px;
+  }
+  &title {
+    font-size: 24px;
+    font-weight: bold;
+    color: $black;
+    margin-top: 16px;
+  }
+  &price {
+      font-size: 46px;
+      color: $black;
+      margin: 32px 0;
+  }
+}

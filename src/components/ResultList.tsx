@@ -1,12 +1,30 @@
-import React, { FC } from 'react'
-import ListItem from './ListItem'
+import React, { FC } from 'react';
+// components
+import ListItem from './ListItem';
+// types
+import { Item } from '../types';
 
-const ResultList = () => {
-    return (
-        <section className='result-list'>
-            {/* <ListItem /> */}
-        </section>
-    )
+interface Props {
+  items: Item[];
 }
 
-export default ResultList
+const ResultList: FC<Props> = ({ items }) => {
+  return (
+    <section className="result-list">
+      {items?.map((item) => (
+        <ListItem
+          key={item.id}
+          id={item.id}
+          price={item.price}
+          title={item.title}
+          picture={item.picture}
+          state_name={item.state_name}
+          condition={item.condition}
+          free_shipping={item.free_shipping}
+        />
+      ))}
+    </section>
+  );
+};
+
+export default ResultList;
