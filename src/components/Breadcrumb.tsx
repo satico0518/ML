@@ -1,26 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+const breadcumbItems = [
+  'Electronica, Audio y Video',
+  'iPod',
+  'Reproductores',
+  'iPod touch',
+  '32 GB',
+];
 
 export const Breadcrumb = () => {
   return (
     <ul className="breadcrumb">
-      <li>
-        <a href="!#">Electronica, Audio y Video</a> >
-      </li>
-      <li>
-        <a href="!#">iPod</a> >
-      </li>
-      <li>
-        <a href="!#">Reproductores</a> >
-      </li>
-      <li>
-        <a href="!#">Reproductores</a> >
-      </li>
-      <li>
-        <a href="!#">iPod touch</a> >
-      </li>
-      <li>
-        <a href="!#">32 GB</a>
-      </li>
+      {breadcumbItems.map((item, i) => {
+        return (
+          <li key={item}>
+            <Link to={`/items?search=${item}`}>
+              {item}
+            </Link>
+            {' '} {i < breadcumbItems.length - 1 ? ' >' : null}
+          </li>
+        );
+      })}
     </ul>
   );
 };
