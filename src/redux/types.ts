@@ -12,7 +12,7 @@ export const SET_CURRENT_ITEM = '[ITEMS] SET_CURRENT_ITEM';
 // interfaces
 export type Action = {
   type: string;
-  payload: any | null;
+  payload?: any | null;
 };
 
 // States

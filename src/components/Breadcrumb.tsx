@@ -15,10 +15,8 @@ export const Breadcrumb = () => {
       {breadcumbItems.map((item, i) => {
         return (
           <li key={item}>
-            <Link to={`/items?search=${item}`}>
-              {item}
-            </Link>
-            {' '} {i < breadcumbItems.length - 1 ? ' >' : null}
+            <Link to={`/items?search=${item}`}>{item}</Link>{' '}
+            {i < breadcumbItems.length - 1 ? ' >' : null}
           </li>
         );
       })}

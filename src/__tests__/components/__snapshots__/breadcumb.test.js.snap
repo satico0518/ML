@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`breadcumb should match snapshot 1`] = `
+<ul
+  className="breadcrumb"
+>
+  <li
+    key="Electronica, Audio y Video"
+  >
+    <Link
+      to="/items?search=Electronica, Audio y Video"
+    >
+      Electronica, Audio y Video
+    </Link>
+     
+     &gt;
+  </li>
+  <li
+    key="iPod"
+  >
+    <Link
+      to="/items?search=iPod"
+    >
+      iPod
+    </Link>
+     
+     &gt;
+  </li>
+  <li
+    key="Reproductores"
+  >
+    <Link
+      to="/items?search=Reproductores"
+    >
+      Reproductores
+    </Link>
+     
+     &gt;
+  </li>
+  <li
+    key="iPod touch"
+  >
+    <Link
+      to="/items?search=iPod touch"
+    >
+      iPod touch
+    </Link>
+     
+     &gt;
+  </li>
+  <li
+    key="32 GB"
+  >
+    <Link
+      to="/items?search=32 GB"
+    >
+      32 GB
+    </Link>
+     
+  </li>
+</ul>
+`;
